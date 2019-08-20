@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Second Street Technical Screen - Back-End Developer</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script>
+			(function(fn) {
+				if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+					fn();
+				} else {
+					document.addEventListener('DOMContentLoaded', fn);
+				}
+			})(function() {
+				hljs.initHighlightingOnLoad();
+				new ClipboardJS('#copy');
+			});
+		</script>
+		<style>
+			body {
+				font: 16px sans-serif;
+				color: #222;
+				margin: 0 1em;
+				box-sizing: border-box;
+			}
+			h1 {
+				text-align: center;
+			}
+			.logo {
+				max-width: 100%;
+				height: auto;
+			}
+			h2 {
+				color: #888;
+				font: normal 24px sans-serif;
+				text-align: center;
+				text-transform: uppercase;
+				margin-bottom: 0.5em;
+			}
+			.hljs {
+        padding: 0em 1.5em;
+      }
+			.actions {
+				max-width: 75%;
+				margin: 2em auto 1em auto	;
+				text-align: center;
+			}
+			.button {
+				background: #1394d2;
+				color: white;
+				border-radius: 4px;
+				padding: 0.5em;
+        margin: 0.5em;
+				text-decoration: none;
+				display: inline-block;
+				text-align: center;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-top-color: rgba(255, 255, 255, 0.5);
+				border-bottom-color: rgba(0, 0, 0, 0.2);
+				text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+				cursor: pointer;
+			}
+			pre {
+				margin-bottom: 4em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1><a href="https://secondstreet.com/careers/">
+			<img alt="Second Street" class="logo" src="https://secondstreet.com/wp-content/uploads/2017/04/secondstreet.png" width="480" height="75">
+		</a></h1>
+		<h2>C# Technical Screen</h2>
+		<div class="actions">
+			<a class="button" id="copy" data-clipboard-target="#screencs">Copy Code to Clipboard</a>
+			<a class="button" href="https://gist.github.com/">Create a Gist</a>
+		</div>
+		<pre><code class="csharp" id="screencs">
+// 1. Using the code sample below as a starting place,
+// and given the classes of Authors and Books described below
+// write a lambda expression to get all the books by an author's LastName.
+// Then order by the book's PublishDate descending.
+
+public class Author
+{
+  public int Id { get; set; }
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public List<Book> Books { get; set; }
+}
+
+public class Book
+{
+  public int Id { get; set; }
+  public string Title { get; set; }
+  public DateTime PublishDate { get; set; }
+  public Author Author { get; set; }
+}
+
+public List<Book> GetBooksByAuthorLastName(string lastName)
+{
+	List<Book> books = new List<Book>();
+	// Assume code to get Books from a database
+	// books = GetBooksFromDatabase();
+}
+
+
+
+// 2. Using the code your wrote above,
+// create a unit test that confirms that the data returned
+// matches what is expected based on specified input.
+// (Call your own method and then confirm the output)
+
+// Unit Test Goes Here
+
+
+
+// 3. Assume that it takes about 10 seconds for each execution of GetAuthorsLatestBooksAndUpdateDatabase() to run.
+// There are enough authors in the database that this would be a very long running process to finish.
+// The process is kicked off by a user pressing a button on a webpage, and the user no longer wants to wait for the process to finish.
+// Rewrite the code sample below so that it is multi-threaded, but only a max of 20 threads are spooled up to run simultaneously.
+// Also, return control of the webpage back to the user once the multi-threaded process has begun.
+
+public void GetAuthorsLatestWork()
+    {
+        List<Author> authors = new List<Author>();
+        // Assume code to get authors from a database
+        // authors = GetAuthorsFromDatabase();
+        foreach (Author author in authors)
+        {
+            GetAuthorsLatestBooksAndUpdateDatabase(author);
+        }
+    }
+
+
+
+
+// 4. Using the code sample below as a starting place
+// and given the class of Employee described below,
+// write a recursive method that would return all the Employees in this format
+
+
+public class Employee
+{
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public List<Employee> Subordinates { get; set; }
+}
+
+public string PrintEmployeeHierarchy(List<Employee> nestedEmployees)
+{
+    // Code Goes Here
+}
+
+
+=> Bob Barker
+  => James Dean
+    => Todd Howard
+  => Phil McCracken
+    => Berny Sanders
+=> Ted Drew
+  => Jimmy Stuart
+    => Jake Thomas
+    => John Daily
+      => Tommy Pickles
+        => Tom Cruise
+        => Kate Blanchett
+
+
+</code></pre>
+<h2>SQL Technical Screen</h2>
+<div class="actions">
+	<a class="button" id="copy" data-clipboard-target="#screensql">Copy Code to Clipboard</a>
+	<a class="button" href="https://gist.github.com/">Create a Gist</a>
+</div>
+<pre><code class="sql" id="screensql">
+-- Given a schema of Authors and Books described below,
+-- please complete the following questions
+
+Authors
+	Id	int primary key (not null)
+	FirstName	varchar(50) (not null)
+	LastName	varchar(50) (not null)
+
+Books
+	Id	int primary key (not null)
+	Title	varchar(100) (not null)
+	PublishDate	datetime2(2) (not null)
+	AuthorId	int (null)
+
+
+
+-- 1. Write a query to return all the Authors and include the Publish date of their most recent book.
+
+
+
+
+-- 2. Rewrite the query from #1 to also include the Title of their most recent book.
+
+
+
+
+-- 3. Write a query to find any records in Books that are missing an Author record.
+
+
+
+
+-- 4. Write the query for #3 above in a different way.
+
+
+
+
+-- 5. Describe what indexes would help the performance for the queries you wrote above.
+
+
+</code></pre>
+	</body>
+</html>

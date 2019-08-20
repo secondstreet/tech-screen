@@ -1,0 +1,383 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Second Street Technical Screen - Front-End Software Engineer</title>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script>
+			(function(fn) {
+				if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+					fn();
+				} else {
+					document.addEventListener('DOMContentLoaded', fn);
+				}
+			})(function() {
+				hljs.initHighlightingOnLoad();
+				new ClipboardJS('#copy');
+			});
+		</script>
+		<style>
+			body {
+				font: 16px sans-serif;
+				color: #222;
+				margin: 0 1em;
+				box-sizing: border-box;
+			}
+			h1 {
+				text-align: center;
+			}
+			.logo {
+				max-width: 100%;
+				height: auto;
+			}
+			h2 {
+				color: #888;
+				font: normal 14px sans-serif;
+				text-align: center;
+				text-transform: uppercase;
+			}
+			.hljs {
+        padding: 0em 1.5em;
+      }
+			.actions {
+				max-width: 75%;
+				margin: 2em auto;
+				text-align: center;
+			}
+			.button {
+				background: #1394d2;
+				color: white;
+				border-radius: 4px;
+				padding: 0.5em;
+        margin: 0.5em;
+				text-decoration: none;
+				display: inline-block;
+				text-align: center;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-top-color: rgba(255, 255, 255, 0.5);
+				border-bottom-color: rgba(0, 0, 0, 0.2);
+				text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<h1><a href="https://secondstreet.com/careers/">
+			<img alt="Second Street" class="logo" src="../../secondstreet.png" width="480" height="75">
+		</a></h1>
+		<h2>Front-End Software Engineer Technical Screen</h2>
+		<div class="actions">
+			<a class="button" id="copy" data-clipboard-target="#screenjs">Copy Code to Clipboard</a>
+			<a class="button" href="https://gist.github.com/">Create a Gist</a>
+		</div>
+		<pre><code class="javascript" id="screenjs">
+/**************\
+ * Algorithms *
+\**************/
+
+// Given an array of objects summarizing the number of fish in an aquarium,
+// find the percent of fish where the species is unknown (the `species` is
+// `undefined`). Return the percentage as a whole number between `0` and `100`.
+
+// Example input:
+[
+  { species: 'Swordtail', count: 2 },
+  { species: 'Pearl Gourami', count: 1 },
+  { species: 'Rummynose Tetra', count: 12 },
+  { species: 'Neon Tetra', count: 30 },
+  { species: 'Guppy', count: 8 },
+  { species: 'Kribensis', count: 1 },
+  { species: 'Angelfish', count: 1 },
+  { species: undefined, count: 5 },
+];
+
+// Example output:
+8;
+
+// Solution:
+export const percentUnknown = fish => 'SOLUTION HERE';
+
+
+
+/*****************\
+ * Algorithms II *
+\*****************/
+
+// There exists a function that, given an array of categories and an array of
+// entries, creates an array of objects with a category name and an entry count.
+
+// Example input (categories):
+[
+  { name: 'Cats', id: 10 },
+  { name: 'Dogs', id: 20 },
+  // ...
+];
+
+// Example input (entries):
+[
+  { categoryId: 10, name: 'Fluffy' },
+  { categoryId: 10, name: 'Mittens' },
+  // ...
+];
+
+// Example output:
+[{ name: 'Cats', count: 42 }, { name: 'Dogs', count: 55 }, /* ... */];
+
+// The following example implementation has a performance problem noticeable
+// when you have hundreds of categories and tens of thousands of entries.
+
+export const categoriesByEntryCount = (categories, entries) =>
+  categories.map(category => ({
+    name: category.name,
+    count: entries.filter(entry => entry.categoryId === category.id).length,
+  }));
+
+// The above algorithm runs A * B iterations, where A is the number of categories
+// and B is the number of entries. Instead, it could run in A + B iterations.
+// Please re-implement the algorithm to run A + B iterations.
+
+export const countCategoriesOptimized = (categories, entries) => 'SOLUTION HERE';
+
+
+
+/***********************\
+ * Regular Expressions *
+\***********************/
+
+// Given an array of 1,000 strings that may or may not contain phone numbers,
+// return the index of each string that appears to contain a U.S. phone number.
+// U.S. phone numbers are guaranteed to be formatted either as `(877) 843-2900`
+// or `877-843-2900`.
+
+// Example input:
+[
+  'Call today! Reach us at 314-867-5309 any day of the week.',
+  'Over 3,148,675,309 people trust ACME for all their road runner needs!',
+  '(877) 843-2900',
+  // ...
+];
+
+// Example output:
+[0, 2, /* ... */];
+
+// Solution:
+export const phoneNumberIndices = strings => 'SOLUTION HERE';
+
+
+
+/*************\
+ * Debugging *
+\*************/
+
+// Please visit this URL:
+// https://images1.upickem.net/ux/techscreen/front-end/software-engineer/debug.html
+
+// Using the development tools in your favorite browser, please do the
+// following tasks. Please also provide a screenshot of how you used the
+// development tools for each of the tasks.
+
+// Please set a breakpoint on line 1706.
+// What is the value of the variable `washingtonAve` at that breakpoint?
+export const washingtonAve = 'ANSWER HERE';
+
+// Please set a breakpoint on line 2061.
+// What is the value of the variable `theLoop` when the variable `cwe` has a
+// value of `'central west end'`?
+export const theLoop = 'ANSWER HERE';
+
+// What is the value of the `X-Best-Restaurant` header on the `POST` to `/opinions`?
+export const xBestRestaurant = 'ANSWER HERE';
+
+
+
+/*******\
+ * CSS *
+\*******/
+
+// Please define the following to the best of your knowledge. If you aren't
+// familiar with a topic, just answer "I don't know" and move to the next one.
+
+// The CSS Box Model
+export const cssBoxModel = `
+  ANSWER HERE
+`;
+
+// CSS Grid
+export const cssGrid = `
+  ANSWER HERE
+`;
+
+// Flexbox
+export const flexbox = `
+  ANSWER HERE
+`;
+
+// CSS Specificity
+export const cssSpecificity = `
+  ANSWER HERE
+`;
+
+// Media Queries
+export const mediaQueries = `
+  ANSWER HERE
+`;
+
+// Please answer the following questions to the best of your knowledge. If you aren't
+// familiar with a topic, just answer "I don't know" and move to the next one.
+
+// What thought process do you use to decide whether to use floats, flexbox,
+// or grid to lay out a page?
+export const floatsFlexboxOrGrid = `
+  ANSWER HERE
+`;
+
+
+/*******************************\
+ * Object-Oriented Programming *
+\*******************************/
+
+// Please define the following to the best of your ability. If you aren't
+// familiar with a topic, just answer "I don't know" and move to the next one.
+
+// Class, Object (and the difference between the two)
+export const classAndObject = `
+  ANSWER HERE
+`;
+
+// Instantiation
+export const instantiation = `
+  ANSWER HERE
+`;
+
+// Instance Methods, Static Methods (and the difference between the two)
+export const instanceAndStaticMethods = `
+  ANSWER HERE
+`;
+
+// Constructors
+export const constructors = `
+  ANSWER HERE
+`;
+
+// Superclass
+export const superclass = `
+  ANSWER HERE
+`;
+
+// Inheritance
+export const inheritance = `
+  ANSWER HERE
+`;
+
+
+
+/**************************\
+ * Functional Programming *
+\**************************/
+
+// Please define the following to the best of your ability. If you aren't
+// familiar with a topic, just answer "I don't know" and move to the next one.
+
+// Pure function, Impure function (and the difference between the two)
+export const pureAndImpureFunction = `
+  ANSWER HERE
+`;
+
+// Callback function
+export const callbackFunction = `
+  ANSWER HERE
+`;
+
+// Function Expressions, Function Declarations (and the difference between the two)
+export const functionExpressionsAndDeclarations = `
+  ANSWER HERE
+`;
+
+// Immediately-Invoked Function Expressions (IIFEs) and when/why to use them
+export const iife = `
+  ANSWER HERE
+`;
+
+
+/***************\
+ * Code Review *
+\***************/
+
+// When reviewing the following code, what changes might you suggest?
+// Please leave JavaScript comments in this file with the suggestions you'd
+// make to the developer who wrote this code.
+
+
+// utils/stats.js
+export const voteStats = (votes, existingStats) => {
+  if (!Array.isArray(votes)) {
+    throw new Error('You must pass an array of votes to voteStats');
+  }
+
+  const ret = [];
+  for (const v of votes) {
+    const hash = {};
+    hash.count = v.count;
+    hash.userId = v.user.id;
+    ret.push(hash);
+  }
+  for (const stat of existingStats) {
+    ret.push(stat);
+  }
+  return ret;
+};
+
+
+// utils/stats-test.js
+import { voteStats } from './stats';
+
+describe('voteStats', () => {
+  it('should calculate new stats after being fed existing stats and stats about votes', () => {
+    expect(
+      voteStats(
+        [
+          { count: 22, user: { id: 121 } },
+          { count: 61, user: { id: 122 } },
+          { count: 93, user: { id: 123 } },
+        ],
+        [
+          { count: 11, userId: 118 },
+          { count: 42, userId: 119 },
+          { count: 78, userId: 120 },
+        ]
+      )
+    ).toEqual([
+      { count: 11, userId: 118 },
+      { count: 42, userId: 119 },
+      { count: 78, userId: 120 },
+      { count: 22, userId: 121 },
+      { count: 61, userId: 122 },
+      { count: 78, userId: 123 },
+    ]);
+  });
+});
+
+
+// user-actions.js
+import { voteStats } from './utils/stats';
+
+export default class {
+  constructor(votes = [], stats = []) {
+    this.stats = voteStats(votes, stats);
+  }
+
+  render() {
+    return `&#x3C;ul&#x3E;
+      ${this.stats.map(
+        stat => `&#x3C;li&#x3E;User ID ${stat.userId} took ${stat.count} actions&#x3C;/li&#x3E;`
+      )}
+    &#x3C;/ul&#x3E;`;
+  }
+}
+
+</code></pre>
+	</body>
+</html>
