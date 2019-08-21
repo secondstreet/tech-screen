@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Second Street Exercise - CSS</title>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script>
+			(function(fn) {
+				if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+					fn();
+				} else {
+					document.addEventListener('DOMContentLoaded', fn);
+				}
+			})(function() {
+				hljs.initHighlightingOnLoad();
+				new ClipboardJS('#copy');
+			});
+		</script>
+		<style>
+			body {
+				font: 16px sans-serif;
+				color: #222;
+				margin: 0 1em;
+				box-sizing: border-box;
+			}
+			h1 {
+				text-align: center;
+			}
+			.logo {
+				max-width: 100%;
+				height: auto;
+			}
+			h2 {
+				color: #888;
+				font: normal 14px sans-serif;
+				text-align: center;
+				text-transform: uppercase;
+			}
+			.hljs {
+        padding: 0em 1.5em;
+      }
+			.actions {
+				max-width: 75%;
+				margin: 2em auto;
+				text-align: center;
+			}
+			.button {
+				background: #1394d2;
+				color: white;
+				border-radius: 4px;
+				padding: 0.5em;
+        margin: 0.5em;
+				text-decoration: none;
+				display: inline-block;
+				text-align: center;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-top-color: rgba(255, 255, 255, 0.5);
+				border-bottom-color: rgba(0, 0, 0, 0.2);
+				text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+				cursor: pointer;
+			}
+			.help {
+				max-width: 480px;
+				margin: 0 auto;
+				border: 1px solid #1394d2;
+				border-radius: 3px;
+				padding: 0.5em;
+			}
+			.help ol {
+				margin: 0;
+			}
+			.help li {
+				margin: 0 0 0.5em 0;
+			}
+      .mockups {
+        margin: 2em 0;
+      }
+      .mockups video,
+      .mockups img {
+        display: block;
+        margin: 0 auto;
+      }
+		</style>
+	</head>
+	<body>
+		<h1><a href="https://secondstreet.com/careers/">
+			<img alt="Second Street" class="logo" src="../../secondstreet.png" width="480" height="75">
+		</a></h1>
+		<h2>Front-End CSS Exercise</h2>
+		<div class="help">
+      <p>Using only styling, please implement the &#x22;author&#x22; component in a new <a href="https://codepen.io">CodePen</a>. The mockups are at the bottom of this page, below the code block.</p>
+      <h3>Guidelines &amp; Rules</h3>
+			<ul>
+        <li>Feel free to configure the CodePen to use Sass, PostCSS, etc.</li>
+        <li>Do not change the HTML, and do not write any JavaScript.</li>
+        <li>The component should be responsive.</li>
+        <li>Feel free to look up references like MDN, CSS Tricks, Stack Overflow and others.</li>
+			</ul>
+      <h3>Instructions</h3>
+      <ol>
+        <li><a href="https://codepen.io/pen/">Create a CodePen</a></li>
+        <li>Paste the code below into the <code>HTML</code> area of the CodePen</li>
+        <li>Implement the "author" component in the <code>CSS</code> area of the CodePen</li>
+      </ol>
+		</div>
+		<div class="actions">
+			<a class="button" id="copy" data-clipboard-target="#screenjs">Copy Code to Clipboard</a>
+			<a class="button" href="https://codepen.io/pen/">Create a CodePen</a>
+		</div>
+		<pre><code class="html" id="screenjs">
+&#x3C;!--
+
+////////////////////////////////////
+// Please do not change the HTML. //
+////////////////////////////////////
+
+Instructions:
+
+Useful information
+==================
+Blue color: rgb(0, 150, 214)
+Mobile cutoff: 480px
+Body font: Muli
+Header font: Oswald
+
+--&#x3E;
+
+&#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Muli|Oswald&#x26;display=swap&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+
+&#x3C;aside class=&#x22;author&#x22;&#x3E;
+  &#x3C;a class=&#x22;author__avatar&#x22; href=&#x22;https://example.com/kitty-cat/&#x22;&#x3E;
+    &#x3C;img class=&#x22;author__photo&#x22; src=&#x22;https://placekitten.com/480/480&#x22; alt=&#x22;Kitty Cat&#x22; width=&#x22;480&#x22; height=&#x22;480&#x22; /&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;header class=&#x22;author__header&#x22;&#x3E;
+    &#x3C;a class=&#x22;author__name&#x22; href=&#x22;https://example.com/kitty-cat/&#x22;&#x3E;Kitty Cat&#x3C;/a&#x3E;
+    &#x3C;a class=&#x22;author__company&#x22; href=&#x22;https://secondstreet.com/&#x22;&#x3E;Second Street&#x3C;/a&#x3E;
+  &#x3C;/header&#x3E;
+  &#x3C;div class=&#x22;author__description&#x22;&#x3E;
+    &#x3C;p&#x3E;This adorable kitty cat is an example placeholder photo at Second Street and has extensive background in snuggles. It is a huge advocate of the power of catnip for every cat role within an household, including pet, friend, and mouser.&#x3C;/p&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/aside&#x3E;
+
+</code></pre>
+    <div class="mockups">
+      <h2>Mockups</h2>
+      <a href="./desktop.png"><img src="./desktop.png" width="798" height="253"></a>
+      <a href="./desktop-hover.png"><img src="./desktop-hover.png" width="798" height="253"></a>
+      <a href="./mobile.png"><img src="./mobile.png" width="275" height="544"></a>
+      <a href="./motion.mov"><video src="./motion.mov" width="836" hieght="642" autoplay muted loop></video></a>
+    </div>
+	</body>
+</html>
