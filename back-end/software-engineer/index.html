@@ -88,7 +88,7 @@ public class Author
   public int Id { get; set; }
   public string FirstName { get; set; }
   public string LastName { get; set; }
-  public List<Book> Books { get; set; }
+  public List&#60;Book&#62; Books { get; set; }
 }
 
 public class Book
@@ -99,9 +99,9 @@ public class Book
   public Author Author { get; set; }
 }
 
-public List<Book> GetBooksByAuthorLastName(string lastName)
+public List&#60;Book&#62; GetBooksByAuthorLastName(string lastName)
 {
-	List<Book> books = new List<Book>();
+	List&#60;Book&#62; books = new List&#60;Book&#62;();
 	// Assume code to get Books from a database
 	// books = GetBooksFromDatabase();
 }
@@ -125,7 +125,7 @@ public List<Book> GetBooksByAuthorLastName(string lastName)
 
 public void GetAuthorsLatestWork()
     {
-        List<Author> authors = new List<Author>();
+        List&#60;Author&#62; authors = new List&#60;Author&#62;();
         // Assume code to get authors from a database
         // authors = GetAuthorsFromDatabase();
         foreach (Author author in authors)
@@ -146,10 +146,10 @@ public class Employee
 {
   public string FirstName { get; set; }
   public string LastName { get; set; }
-  public List<Employee> Subordinates { get; set; }
+  public List&#60;Employee&#62; Subordinates { get; set; }
 }
 
-public string PrintEmployeeHierarchy(List<Employee> nestedEmployees)
+public string PrintEmployeeHierarchy(List&#60;Employee&#62; nestedEmployees)
 {
     // Code Goes Here
 }
