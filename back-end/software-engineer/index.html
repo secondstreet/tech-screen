@@ -85,25 +85,25 @@
 
 public class Author
 {
-  public int Id { get; set; }
-  public string FirstName { get; set; }
-  public string LastName { get; set; }
-  public List&#60;Book&#62; Books { get; set; }
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public List&#60;Book&#62; Books { get; set; }
 }
 
 public class Book
 {
-  public int Id { get; set; }
-  public string Title { get; set; }
-  public DateTime PublishDate { get; set; }
-  public Author Author { get; set; }
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public DateTime PublishDate { get; set; }
+    public Author Author { get; set; }
 }
 
 public List&#60;Book&#62; GetBooksByAuthorLastName(string lastName)
 {
-	List&#60;Book&#62; books = new List&#60;Book&#62;();
-	// Assume code to get Books from a database
-	// books = GetBooksFromDatabase();
+    List&#60;Book&#62; books = new List&#60;Book&#62;();
+    // Assume code to get Books from a database
+    // books = GetBooksFromDatabase();
 }
 
 
@@ -124,15 +124,15 @@ public List&#60;Book&#62; GetBooksByAuthorLastName(string lastName)
 // Also, return control of the webpage back to the user once the multi-threaded process has begun.
 
 public void GetAuthorsLatestWork()
+{
+    List&#60;Author&#62; authors = new List&#60;Author&#62;();
+    // Assume code to get authors from a database
+    // authors = GetAuthorsFromDatabase();
+    foreach (Author author in authors)
     {
-        List&#60;Author&#62; authors = new List&#60;Author&#62;();
-        // Assume code to get authors from a database
-        // authors = GetAuthorsFromDatabase();
-        foreach (Author author in authors)
-        {
-            GetAuthorsLatestBooksAndUpdateDatabase(author);
-        }
+        GetAuthorsLatestBooksAndUpdateDatabase(author);
     }
+}
 
 
 
@@ -144,9 +144,9 @@ public void GetAuthorsLatestWork()
 
 public class Employee
 {
-  public string FirstName { get; set; }
-  public string LastName { get; set; }
-  public List&#60;Employee&#62; Subordinates { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public List&#60;Employee&#62; Subordinates { get; set; }
 }
 
 public string PrintEmployeeHierarchy(List&#60;Employee&#62; nestedEmployees)
@@ -176,7 +176,7 @@ public string PrintEmployeeHierarchy(List&#60;Employee&#62; nestedEmployees)
 	<a class="button" href="https://gist.github.com/">Create a Gist</a>
 </div>
 <pre><code class="sql" id="screensql">
--- Given a schema of Authors and Books described below,
+-- Given a schema of Authors and Publications described below,
 -- please complete the following questions
 
 Authors
@@ -184,7 +184,7 @@ Authors
 	FirstName	varchar(50) (not null)
 	LastName	varchar(50) (not null)
 
-Books
+Publications
 	Id	int primary key (not null)
 	Title	varchar(100) (not null)
 	PublishDate	datetime2(2) (not null)
@@ -192,17 +192,17 @@ Books
 
 
 
--- 1. Write a query to return all the Authors and include the Publish date of their most recent book.
+-- 1. Write a query to return all the Authors and include the Publish date of their most recent publication.
 
 
 
 
--- 2. Rewrite the query from #1 to also include the Title of their most recent book.
+-- 2. Rewrite the query from #1 to also include the Title of their most recent publication.
 
 
 
 
--- 3. Write a query to find any records in Books that are missing an Author record.
+-- 3. Write a query to find any records in Publications that are missing an Author record.
 
 
 
