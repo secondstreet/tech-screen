@@ -9,8 +9,8 @@ header {
   margin: 0;
   padding: 0.5em;
   color: white;
-  display: flex;
   align-items: center;
+  text-align:center;
 }
 .logo {
   width: 250px;
@@ -20,16 +20,11 @@ header h1, header h2 {
   margin: 0;
   line-height: 1;
 }
-header h1 {
-  border-right: 1px solid white;
-  margin: 0 0.5em 0 0;
-  padding-right: 0.5em;
-}
 header h2 {
   font: normal 14px sans-serif;
   text-align: center;
   text-transform: uppercase;
-  display: inline;
+  margin-top: 1em;
 }
 header a {
   color: white;
@@ -57,4 +52,18 @@ header a {
   border-bottom-color: rgba(0, 0, 0, 0.2);
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+@media (min-width: 640px) {
+  header {
+    display: flex;
+    text-align: left;
+  }
+  header h1 {
+    border-right: 1px solid white;
+    margin: 0 0.5em 0 0;
+    padding-right: 0.5em;
+  }
+  header h2 {
+    margin: 0;
+  }
 }
