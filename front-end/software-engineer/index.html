@@ -23,21 +23,32 @@
 			body {
 				font: 16px sans-serif;
 				color: #222;
-				margin: 0 1em;
+				margin: 0;
 				box-sizing: border-box;
 			}
-			h1 {
-				text-align: center;
+			header {
+				background: #2574db;
+				margin: 0;
+				padding: 0.5em;
+				color: white;
 			}
 			.logo {
 				max-width: 100%;
 				height: auto;
 			}
-			h2 {
-				color: #888;
+			header h1, header h2 {
+				display: inline;
+				margin: 0;
+				line-height: 1;
+			}
+			header h2 {
 				font: normal 14px sans-serif;
 				text-align: center;
 				text-transform: uppercase;
+				border-left: 1px solid white;
+				padding-left: 1em;
+				display: inline;
+				margin: 0 0 0 1em;
 			}
 			.hljs {
         padding: 0em 1.5em;
@@ -48,7 +59,7 @@
 				text-align: center;
 			}
 			.button {
-				background: #1394d2;
+				background: #2574db;
 				color: white;
 				border-radius: 4px;
 				padding: 0.5em;
